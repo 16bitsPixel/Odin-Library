@@ -42,18 +42,18 @@ function displayLibrary() {
         authorText.textContent = myLibrary[i].author;
         let pageText = document.createElement("p");
         pageText.textContent = myLibrary[i].numPages;
-        let readText = document.createElement("p");
+        let readButton = document.createElement("button");
         if (myLibrary[i].readYet) {
-            readText.textContent = "Read";
+            readButton.textContent = "Read";
         }
         else {
-            readText.textContent = "Not Read";
+            readButton.textContent = "Not Read";
         }
 
         bookCard.append(titleText);
         bookCard.append(authorText);
         bookCard.append(pageText);
-        bookCard.append(readText);
+        bookCard.append(readButton);
 
         document.querySelector(".library").append(bookCard);
     }
