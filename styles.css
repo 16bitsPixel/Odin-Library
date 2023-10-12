@@ -102,14 +102,19 @@ html, body {
 }
 
 .modal {
-    background-color: white;
-    height: 50%;
-    width: 50%;
+    background-color: aliceblue;
+    height: 45%;
+    width: 35%;
     top: 25%;
     position: fixed;
     opacity: 0;
     transition: 0.2s ease-in-out;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
 }
 
 .active {
@@ -133,11 +138,58 @@ html, body {
 .addBookForm {
     display: flex;
     flex-direction:column;
+    justify-content: center;
     align-items: center;
+    width: 80%;
+    height: 80%;
+    gap: 5%;
+}
+
+.addBookForm > h3 {
+    font-size: 3.5vw;
+    font-weight: bold;
+}
+
+.addBookForm > input {
+    width: 80%;
+    height: 5vh;
+    font-size: 2vh;
+    text-align: center;
+    border-radius: 25px;
+    border-style: none;
+}
+
+.addBookForm > input:hover {
+    background-color:rgb(231, 231, 231);
 }
 
 .isRead {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.isRead > label {
+    font-size: 2vw;
+}
+
+.isRead > input {
+    width: 2vh;
+    height: 2vh;
+}
+
+.addBookForm > button {
+    border-style: none;
+    border-radius: 25px;
+    background-color: rgb(0, 149, 255);
+    color: white;
+    font-size: 3vw;
+    width: 50%;
+}
+
+.addBookForm > button:hover {
+    background-color: rgb(0, 120, 206);
 }
 
 .library {
