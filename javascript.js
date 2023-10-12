@@ -63,17 +63,20 @@ function displayLibrary() {
 document.querySelector(".newBookPopUp button").addEventListener("click", () => {
     document.querySelector(".modal").classList.add("active");
     document.querySelector(".overlay").classList.add("active");
+    document.querySelector(".addBookForm").classList.add("active");
 });
 
 // close dialog when click outside or escape key press
 document.querySelector(".overlay").addEventListener("click", (e) => {
     document.querySelector(".modal").classList.remove("active");
     document.querySelector(".overlay").classList.remove("active");
+    document.querySelector(".addBookForm").classList.remove("active");
 });
 document.addEventListener("keydown", (e) => {
     if (e.key == "Escape") {
         document.querySelector(".modal").classList.remove("active");
         document.querySelector(".overlay").classList.remove("active");
+        document.querySelector(".addBookForm").classList.remove("active");
     }
 });
 
