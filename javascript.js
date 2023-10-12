@@ -65,10 +65,16 @@ document.querySelector(".newBookPopUp button").addEventListener("click", () => {
     document.querySelector(".overlay").classList.add("active");
 });
 
-// close dialog when click outside
+// close dialog when click outside or escape key press
 document.querySelector(".overlay").addEventListener("click", (e) => {
     document.querySelector(".modal").classList.remove("active");
     document.querySelector(".overlay").classList.remove("active");
+});
+document.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") {
+        document.querySelector(".modal").classList.remove("active");
+        document.querySelector(".overlay").classList.remove("active");
+    }
 });
 
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
