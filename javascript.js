@@ -59,6 +59,18 @@ function displayLibrary() {
     }
 }
 
+// opens dialog when button clicked
+document.querySelector(".newBookPopUp button").addEventListener("click", () => {
+    document.querySelector(".modal").classList.add("active");
+    document.querySelector(".overlay").classList.add("active");
+});
+
+// close dialog when click outside
+document.querySelector(".overlay").addEventListener("click", (e) => {
+    document.querySelector(".modal").classList.remove("active");
+    document.querySelector(".overlay").classList.remove("active");
+});
+
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
 addBookToLibrary("The Hobbit2", "J.R.R. Tolkien", 295, false);
 addBookToLibrary("The Hobbit3", "J.R.R. Tolkien", 295, false);

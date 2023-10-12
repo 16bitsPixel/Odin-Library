@@ -79,6 +79,67 @@ html, body {
     font-weight: bold;
 }
 
+.newBookPopUp {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newBookPopUp > button {
+    font-size: 3rem;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 25px;
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
+}
+
+.newBookPopUp > button:hover {
+    background-color:rgb(187, 194, 199);
+}
+
+.modal {
+    background-color: white;
+    height: 50%;
+    width: 50%;
+    top: 25%;
+    position: fixed;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.active {
+    opacity: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.addBookForm {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.isRead {
+    display: flex;
+}
+
 .library {
     display: grid;
     width: 80%;
