@@ -59,6 +59,11 @@ function displayLibrary() {
     }
 }
 
+// reset book grid
+function resetLibrary() {
+    document.querySelector(".library").innerHTML = "";
+}
+
 // opens dialog when button clicked
 document.querySelector(".newBookPopUp button").addEventListener("click", () => {
     document.querySelector(".modal").classList.add("active");
@@ -77,6 +82,32 @@ document.addEventListener("keydown", (e) => {
         document.querySelector(".modal").classList.remove("active");
         document.querySelector(".overlay").classList.remove("active");
         document.querySelector(".addBookForm").classList.remove("active");
+    }
+});
+
+// add book to library with given submission info
+document.querySelector(".addBookForm button").addEventListener("click", (e) => {
+    e.preventDefault();
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let numPages = document.getElementById("numPages").value;
+    let isRead = document.getElementById("haveRead").checked;
+
+    if (title != "" && author != "" && numPages > 0 && numPages <= 10000) {
+        // add book to library
+        addBookToLibrary(title, author, numPages, isRead);
+
+        // reset and add book to visual grid
+        resetLibrary();
+        displayLibrary();
+
+        // close modal
+        document.querySelector(".modal").classList.remove("active");
+        document.querySelector(".overlay").classList.remove("active");
+        document.querySelector(".addBookForm").classList.remove("active");
+    }
+    else {
+        return;
     }
 });
 
