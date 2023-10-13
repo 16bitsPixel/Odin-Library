@@ -252,6 +252,23 @@ html, body {
     border-radius: 25px;
     border-style: none;
     height: 12%;
+    font-size: 1.2rem;
+}
+
+.read {
+    background-color: rgb(110, 236, 255);
+}
+
+.read:hover {
+    background-color: rgb(87, 189, 204);
+}
+
+.notRead {
+    background-color: rgb(255, 116, 116);
+}
+
+.notRead:hover {
+    background-color: rgb(194, 88, 88);
 }
 
 .footer {

@@ -59,7 +59,20 @@ function displayLibrary() {
         }
         else {
             readButton.textContent = "Not Read";
+            readButton.classList.add("notRead");
         }
+
+        // changes read status when button is clicked
+        readButton.addEventListener("click", () => {
+            if (readButton.textContent == "Read") {
+                readButton.textContent = "Not Read";
+            }
+            else {
+                readButton.textContent = "Read";
+            }
+            readButton.classList.toggle("read");
+            readButton.classList.toggle("notRead");
+        });
 
         bookCard.append(bookCardColored);
         bookCard.append(titleText);
