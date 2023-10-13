@@ -35,13 +35,25 @@ function displayLibrary() {
         let bookCard = document.createElement("div");
         bookCard.classList.add("card");
 
+        // add a colored part to card
+        let bookCardColored = document.createElement("div");
+        bookCardColored.classList.add("colorCard");
+
         // add text onto the card
+        let cardText = document.createElement("div");
+        cardText.classList.add("cardText");
+
         let titleText = document.createElement("p");
         titleText.textContent = myLibrary[i].title;
+        titleText.classList.add("titleText");
+
         let authorText = document.createElement("p");
-        authorText.textContent = myLibrary[i].author;
+        authorText.textContent = "By: " + myLibrary[i].author;
+        authorText.classList.add("authorText");
+
         let pageText = document.createElement("p");
         pageText.textContent = myLibrary[i].numPages;
+
         let readButton = document.createElement("button");
         if (myLibrary[i].readYet) {
             readButton.textContent = "Read";
@@ -50,10 +62,12 @@ function displayLibrary() {
             readButton.textContent = "Not Read";
         }
 
-        bookCard.append(titleText);
-        bookCard.append(authorText);
-        bookCard.append(pageText);
-        bookCard.append(readButton);
+        bookCard.append(bookCardColored);
+        cardText.append(titleText);
+        cardText.append(authorText);
+        cardText.append(pageText);
+        cardText.append(readButton);
+        bookCard.append(cardText);
 
         document.querySelector(".library").append(bookCard);
     }
@@ -111,9 +125,3 @@ document.querySelector(".addBookForm button").addEventListener("click", (e) => {
     }
 });
 
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
-addBookToLibrary("The Hobbit2", "J.R.R. Tolkien", 295, false);
-addBookToLibrary("The Hobbit3", "J.R.R. Tolkien", 295, false);
-addBookToLibrary("The Hobbit4", "J.R.R. Tolkien", 295, false);
-addBookToLibrary("The Hobbit5", "J.R.R. Tolkien", 295, false);
-displayLibrary();
