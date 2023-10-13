@@ -107,10 +107,9 @@ html, body {
     width: 35%;
     top: 25%;
     position: fixed;
-    opacity: 0;
     transition: 0.2s ease-in-out;
     z-index: 1;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -118,7 +117,7 @@ html, body {
 }
 
 .active {
-    opacity: 1;
+    display: flex;
 }
 
 .overlay {
