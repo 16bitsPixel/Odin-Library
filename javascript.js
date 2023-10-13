@@ -39,10 +39,6 @@ function displayLibrary() {
         let bookCardColored = document.createElement("div");
         bookCardColored.classList.add("colorCard");
 
-        // add text onto the card
-        let cardText = document.createElement("div");
-        cardText.classList.add("cardText");
-
         let titleText = document.createElement("p");
         titleText.textContent = myLibrary[i].title;
         titleText.classList.add("titleText");
@@ -52,22 +48,24 @@ function displayLibrary() {
         authorText.classList.add("authorText");
 
         let pageText = document.createElement("p");
-        pageText.textContent = myLibrary[i].numPages;
+        pageText.textContent = myLibrary[i].numPages + " Pages";
+        pageText.classList.add("pageText");
 
         let readButton = document.createElement("button");
+        readButton.classList.add("readButton");
         if (myLibrary[i].readYet) {
             readButton.textContent = "Read";
+            readButton.classList.add("read");
         }
         else {
             readButton.textContent = "Not Read";
         }
 
         bookCard.append(bookCardColored);
-        cardText.append(titleText);
-        cardText.append(authorText);
-        cardText.append(pageText);
-        cardText.append(readButton);
-        bookCard.append(cardText);
+        bookCard.append(titleText);
+        bookCard.append(authorText);
+        bookCard.append(pageText);
+        bookCard.append(readButton);
 
         document.querySelector(".library").append(bookCard);
     }
@@ -125,3 +123,5 @@ document.querySelector(".addBookForm button").addEventListener("click", (e) => {
     }
 });
 
+addBookToLibrary("Harry Potter and the Chamber of Secrets", "J.K. Rowling", 1092, false);
+displayLibrary();
