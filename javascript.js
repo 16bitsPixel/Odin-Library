@@ -74,11 +74,18 @@ function displayLibrary() {
             readButton.classList.toggle("notRead");
         });
 
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("deleteButton");
+
+        // deletes card when button is clicked
+
         bookCard.append(bookCardColored);
         bookCard.append(titleText);
         bookCard.append(authorText);
         bookCard.append(pageText);
         bookCard.append(readButton);
+        bookCard.append(deleteButton);
 
         document.querySelector(".library").append(bookCard);
     }

@@ -248,7 +248,7 @@ html, body {
     text-align: center;
 }
 
-.readButton {
+.readButton, .deleteButton {
     border-radius: 25px;
     border-style: none;
     height: 12%;
@@ -269,6 +269,16 @@ html, body {
 
 .notRead:hover {
     background-color: rgb(194, 88, 88);
+}
+
+.deleteButton {
+    background-color: rgb(223, 223, 223);
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.deleteButton:hover {
+    background-color: rgb(189, 189, 189);
 }
 
 .footer {
