@@ -184,7 +184,7 @@ html, body {
 
 .errorMsg {
     color: red;
-    font-size: 1em;
+    font-size: 2em;
     display: none;
     text-align: center;
 }
