@@ -180,5 +180,4 @@ document.querySelector(".addBookForm button").addEventListener("click", (e) => {
     }
 });
 
-addBookToLibrary("Harry Potter and the Chamber of Secrets", "J.K. Rowling", 1092, false);
 displayLibrary();
