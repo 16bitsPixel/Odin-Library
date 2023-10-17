@@ -66,9 +66,11 @@ function displayLibrary() {
         readButton.addEventListener("click", () => {
             if (readButton.textContent == "Read") {
                 readButton.textContent = "Not Read";
+                myLibrary[i].readYet = false;
             }
             else {
                 readButton.textContent = "Read";
+                myLibrary[i].readYet = true;
             }
             readButton.classList.toggle("read");
             readButton.classList.toggle("notRead");
