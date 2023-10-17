@@ -79,6 +79,11 @@ function displayLibrary() {
         deleteButton.classList.add("deleteButton");
 
         // deletes card when button is clicked
+        deleteButton.addEventListener("click", () => {
+            myLibrary.splice(i, 1);
+            resetLibrary();
+            displayLibrary();
+        });
 
         bookCard.append(bookCardColored);
         bookCard.append(titleText);
