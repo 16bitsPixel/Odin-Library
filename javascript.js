@@ -103,6 +103,16 @@ function resetLibrary() {
     document.querySelector(".library").innerHTML = "";
 }
 
+// check if book is already in library
+function isDuplicate(title, author) {
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].title == title && myLibrary[i].author == author) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // opens dialog when button clicked
 document.querySelector(".newBookPopUp button").addEventListener("click", () => {
     document.querySelector(".modal").classList.add("active");
@@ -133,6 +143,12 @@ document.querySelector(".addBookForm button").addEventListener("click", (e) => {
     let isRead = document.getElementById("haveRead").checked;
 
     if (title != "" && author != "" && numPages > 0 && numPages <= 10000) {
+        // check if book is a duplicate
+        if (isDuplicate(title, author)) {
+
+            return;
+        }
+
         // add book to library
         addBookToLibrary(title, author, numPages, isRead);
 
@@ -146,6 +162,18 @@ document.querySelector(".addBookForm button").addEventListener("click", (e) => {
         document.querySelector(".addBookForm").classList.remove("active");
     }
     else {
+        if (title == "") {
+            document.getElementById("title").setCustomValidity("Please Enter a Title");
+            document.getElementById("title").reportValidity();
+        }
+        if (author == "") {
+            document.getElementById("author").setCustomValidity("Please Enter an Author");
+            document.getElementById("author").reportValidity();
+        }
+        if (numPages < 0 || numPages > 10000 || numPages == "") {
+            document.getElementById("numPages").setCustomValidity("Please Enter a Value Within The Range 0 - 10000");
+            document.getElementById("numPages").reportValidity();
+        }
         return;
     }
 });
