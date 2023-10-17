@@ -137,6 +137,8 @@ document.addEventListener("keydown", (e) => {
 // add book to library with given submission info
 document.querySelector(".addBookForm button").addEventListener("click", (e) => {
     e.preventDefault();
+
+    document.querySelector(".errorMsg").classList.remove("active");
     let title = document.getElementById("title").value;
     let author = document.getElementById("author").value;
     let numPages = document.getElementById("numPages").value;
@@ -145,7 +147,7 @@ document.querySelector(".addBookForm button").addEventListener("click", (e) => {
     if (title != "" && author != "" && numPages > 0 && numPages <= 10000) {
         // check if book is a duplicate
         if (isDuplicate(title, author)) {
-
+            document.querySelector(".errorMsg").classList.add("active");
             return;
         }
 
